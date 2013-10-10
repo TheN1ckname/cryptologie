@@ -88,7 +88,7 @@ public class MainView
 	private JRadioButton other = new JRadioButton("Other");
 
 	JPanel panel = new JPanel();
-    JComboBox comboBox = new JComboBox( new String[] {"Default","TwoFish","Other"});
+    JComboBox chooseAlgoritm = new JComboBox( new String[] {"Default","TwoFish","Other"});
 
 	JPanel buttonBar = ButtonBarFactory
 			.buildRightAlignedBar(new JButton[]{buttonTransform});
@@ -147,6 +147,8 @@ public class MainView
 				dataModel.getDataField(DataModel.PWD_REPEAT_STRING),
 				pwdRepeat);	
 		
+		controller.registerDataComponent(DataModel.ALGORITHM_STRING, chooseAlgoritm);
+		
 		// switched to encription mode on startup of the application
 		dataModel.getDataField(DataModel.ENCRYPT_BOOLEAN)
 			.setValue(Boolean.TRUE);
@@ -158,6 +160,7 @@ public class MainView
 				false);
 		buttonChooseDecSA.setEnabled(false);
 		buttonChooseDecTD.setEnabled(false);
+		
 		
 	}
 	/**
@@ -235,7 +238,7 @@ public class MainView
 		//		 The builder holds the layout container that we now return.
 		
 		builder.addLabel("Algorithm",cc.xy(1,23));
-		builder.add(comboBox, cc.xy(3,23));
+		builder.add(chooseAlgoritm, cc.xy(3,23));
 		JPanel panel = builder.getPanel();
 		
 		return panel;

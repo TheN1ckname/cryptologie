@@ -32,6 +32,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.swing.AbstractButton;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -98,11 +99,15 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 
 		// key dataField, value set of components
 		//component.addPropertyChangeListener(this);
-	    
-		((JTextField)component).addActionListener(this);
-		((JTextField)component).addFocusListener(this);
-		((JTextField)component).getDocument().addDocumentListener(this);
-
+	    if(component instanceof JComboBox) {
+	//		((JComboBox)component).addActionListener(this);
+		//	((JComboBox)component).addFocusListener(this);
+		
+	    } else {
+			((JTextField)component).addActionListener(this);
+			((JTextField)component).addFocusListener(this);
+			((JTextField)component).getDocument().addDocumentListener(this);
+	    }
 		Set dataComponentSet = null;
 
 		if (dataMap.containsKey(dataField))

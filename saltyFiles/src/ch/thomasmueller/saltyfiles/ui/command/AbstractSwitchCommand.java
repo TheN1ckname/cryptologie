@@ -67,7 +67,7 @@ public abstract class AbstractSwitchCommand implements Command
 		// model
 		dataModel.getDataField(DataModel.ENCRYPT_BOOLEAN).setValue(
 				Boolean.valueOf(isEncryptMode));
-
+		
 		// action components
 
 		AbstractButton button = controller

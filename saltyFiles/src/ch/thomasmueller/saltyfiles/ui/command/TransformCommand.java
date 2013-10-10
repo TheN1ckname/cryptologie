@@ -90,9 +90,8 @@ public class TransformCommand implements Command
 		log.debug("start transformation ...");
 
 		final DataModel dataModel = DataModel.getInstance();
-
 		// check password
-
+		String getAlgorithm = getAlgorithm(dataModel);
 		boolean pwdOK = checkPassword(dataModel);
 
 		// check all data entered to start transformation
@@ -116,7 +115,7 @@ public class TransformCommand implements Command
 							boolean useEncryptionMode = ((Boolean) dataModel
 									.getDataField(DataModel.ENCRYPT_BOOLEAN)
 									.getValue()).booleanValue();
-							// Encrypt
+							// Encrypt							
 							if (useEncryptionMode)
 							{
 
@@ -325,6 +324,38 @@ public class TransformCommand implements Command
 		}
 	}
 
+	
+	/**
+	 * Getting of the selected algoritm
+	 */
+	
+	private String getAlgorithm(DataModel dataModel) {
+		DataField algorithm = dataModel.getDataField(DataModel.ALGORITHM_STRING);
+		if(algorithm == null) {
+			System.out.println("opgetieft");
+			return "fuck" ;
+		}
+		
+		String algorithmName = "NONE";
+		if (algorithm.getValue() != null)
+		{
+			if (algorithm.getValue() instanceof char[])
+			{
+				char[] pwdChars = (char[]) algorithm.getValue();
+				System.out.println(pwdChars);
+				algorithmName = pwdChars.toString();
+			}
+		} else
+		{
+			
+			String msg = "shit is broken";
+			System.out.println(msg);
+			log.error(msg);
+			
+		}
+		return algorithmName;
+	}
+	
 	/**
 	 * Checks password entered.
 	 * 
@@ -336,7 +367,6 @@ public class TransformCommand implements Command
 
 		DataField pwd = dataModel.getDataField(DataModel.PWD_STRING);
 		DataField pwdRep = dataModel.getDataField(DataModel.PWD_REPEAT_STRING);
-
 		boolean pwdOK = true;
 
 		if (pwd.getValue() != null && pwdRep.getValue() != null)

@@ -52,10 +52,12 @@ public class DataModel
 
 	public static final String DECRYPT_TARGET_DIR_STRING = "decryptTargetDir";
 
+	public static final String ALGORITHM_STRING = "chooseAlgorithm";
+	
 	private String[] ids = new String[]{ENCRYPT_BOOLEAN, PWD_STRING,
 			PWD_REPEAT_STRING, ENCRYPT_SOURCE_STRING,
 			ENCRYPT_TARGET_DIR_STRING, ENCRYPT_TARGET_ARCHIVE_STRING,
-			DECRYPT_SOURCE_ARCHIVE_STRING, DECRYPT_TARGET_DIR_STRING};
+			DECRYPT_SOURCE_ARCHIVE_STRING, DECRYPT_TARGET_DIR_STRING, ALGORITHM_STRING};
 
 	Map dataFieldsMap = new HashMap();
 
@@ -71,6 +73,7 @@ public class DataModel
 
 	private DataField decryptTargetDir = new DataFieldImpl();
 
+	private DataField algorithm = new DataFieldImpl();
 	/**
 	 * Private constructors inits all <code>DataField</code> s and stores in a
 	 * <code>Map</code>.
