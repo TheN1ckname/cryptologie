@@ -1,0 +1,110 @@
+===============================================================================
+Salty Files               
+
+www.thomasmueller.ch              
+===============================================================================
+
+-------------------------------------------------------------------------------
+	General
+-------------------------------------------------------------------------------
+Salty Files is based on Java (JDK 1.4.2)
+
+Used libraries:
+	Runtime:
+		ant-1.6.1 (http://ant.apache.org)
+		log4j-1.2.8.jar (http://logging.apache.org)
+		forms-1.0.4.jar and looks-1.2.1.jar (http://www.jgoodies.com)
+	Testsing:
+		junit.jar (http://www.junit.org)
+
+OS Support:
+	Linux, 
+	Windows 2000, 
+	Windows XP
+
+This software provides a user interface to encryt or decrypt files (text or binary) 
+on the file system.
+
+Features: 
+	Encyption/decryption (Algorithm: PBE-WithMD5AndDES), 
+	file compression (zip), 
+	user interface 
+	
+-------------------------------------------------------------------------------
+	Installation
+-------------------------------------------------------------------------------
+Preconditions:
+
+You must install Java JRE 1.4.2 or later to run the program.
+
+Developers must install Java SDK 1.4.2 or later to run and compile the program.
+
+You may download it directly from:
+
+	http://java.sun.com/j2se/1.4.2/download.html
+	
+You can test your installation of the Java Runtime Environment (JRE) by typing:
+
+	java -version 
+
+in a command window. A message similar to the one below shoud appear:
+	
+	java version "1.4.2"
+	Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.2-b28)
+	Java HotSpot(TM) Client VM (build 1.4.2-b28, mixed mode)
+
+Your done.	
+
+
+-------------------------------------------------------------------------------
+	Configuration
+-------------------------------------------------------------------------------
+No configuration is needed to run the program, but you may change the 
+configuration of the log-system by changing the entries in the properties file 
+log4j.properties.
+
+-------------------------------------------------------------------------------
+	How to Start the Application
+-------------------------------------------------------------------------------
+Open a command window and change to the directory wheres this README-file is 
+located
+
+Type:
+
+	java -jar saltyfiles.jar 
+
+-------------------------------------------------------------------------------
+   Contents of Delivery 
+-------------------------------------------------------------------------------
+README              This file
+
+LICENCE             The licence description
+
+log4j.properties    Logger configuration file
+
+saltyfiles.jar      Binary
+
+build.xml           ant-build-script
+
+classes/            Directory containing the class files
+
+docs/               Directory containing the javadoc html documentation
+
+test/               Directory containing files used for tests
+
+lib/                Directory containing linked libraries
+
+libTest/            Directory containing test libraries
+
+src/                Directory containing the source code
+
+srcTest/            Directory containing the test source code
+
+
+
+
+
+
+
+
+

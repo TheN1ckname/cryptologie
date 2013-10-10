@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<!--
+ www.thomasmueller.ch
+
+ Copyright (C) 2004 Thomas Mueller
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+-->
+<project default="all" name="saltyFiles" basedir=".">
+
+	<!-- === CONFIGURATION ==================================================== -->
+	
+	<!-- cvs-module-name -->
+	<property name="MODULE" value="saltyFiles" />
+
+	<!-- prefix that allows to reference environment variables -->
+	<property environment="env" />
+
+	<!-- set output path for compiled src -->
+	<property name="OUTPUT_PATH_SRC" value="./classes" />
+
+	<!-- set output path for compiled srcTest -->
+	<property name="OUTPUT_PATH_SRCTEST" value="./classes" />
+
+
+	<!-- set output path for generation of apidoc -->
+	<property name="OUTPUT_PATH_JAVADOC" value="./docs" />	
+
+	<!-- set classpath for compilation of src -->
+	<path id="src_classpath">
+		<fileset dir="./lib">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+	</path>
+
+	<!-- set classpath for compilation of srcTest -->
+	<path id="srcTest_classpath">
+		<pathelement location="${OUTPUT_PATH_SRC}" />
+		<path refid="src_classpath" />
+		<fileset dir="./libTest">
+			<include name="**/*.jar" />
+			<include name="**/*.zip" />
+		</fileset>
+	</path>
+
+	<path id="full_classpath">
+		<path refid="src_classpath" />
+		<path refid="srcTest_classpath" />
+		<pathelement location="${OUTPUT_PATH_SRCTEST}" />
+	</path>
+
+	<!-- set sourcepath for generation of complete javadoc -->
+	<path id="javadoc_srcpath">
+		<pathelement location="./src" />
+	</path>
+
+	<!-- === TARGETS ========================================================== -->
+
+	<!-- DEFAULT TARGET: compiles "src" and "srcTest" and runs JUnit
+       (unit and ResourceDependend) tests -->
+
+	<target name="all"
+	        depends="clean, test, docs, jar"
+	        description="Calls clean, compile, test and docs" />
+
+	<!-- compiling saltyFiles sources -->
+	<target name="compile"
+	        depends="compile_src, compile_srcTest"
+	        description="Compiles src and tests" />
+
+	<!-- compiling saltyFiles sources -->
+	<target name="compile_src" depends="prepare">
+		<javac srcdir="./src"
+		       destdir="${OUTPUT_PATH_SRC}"
+		       debug="true"
+		       classpathref="src_classpath" />
+	</target>
+
+	<!-- compiling saltyFiles test sources -->
+	<target name="compile_srcTest" depends="compile_src">
+		<javac srcdir="./srcTest"
+		       destdir="${OUTPUT_PATH_SRCTEST}"
+		       debug="true"
+		       classpathref="srcTest_classpath" />
+	</target>
+	
+	<target name="prepare">
+		<mkdir dir="${OUTPUT_PATH_SRC}"/>
+		<mkdir dir="${OUTPUT_PATH_JAVADOC}"/>
+	</target>
+	
+	<!-- Calls all tests -->
+	<target name="test"
+	        depends="clean_classes, compile, run_unit_tests"
+	        description="Calls clean, compile and test">
+	</target>
+
+	<!-- run all JUnit unit tests -->
+	<target name="run_unit_tests" depends="compile_srcTest">
+		<junit fork="yes" dir="." haltonfailure="true" printsummary="true">
+			<classpath>
+				<path refid="full_classpath" />
+			</classpath>
+			<formatter type="plain" />
+			<test name="AllTests" />
+		</junit>
+	</target>
+
+
+	<!-- removing all class files -->
+	<target name="clean" depends="clean_classes, clean_javadoc">
+	</target>
+
+	<!-- removing all class files -->
+	<target name="clean_classes" depends="prepare">
+		<delete>
+			<fileset dir="${OUTPUT_PATH_SRC}" includes="**/*.class" />
+			<fileset dir="${OUTPUT_PATH_SRCTEST}" includes="**/*.class" />
+		</delete>
+	</target>
+
+
+	<!-- removing all files and directories -->
+	<target name="clean_javadoc" depends="prepare">
+		
+		<delete>
+			<fileset dir="${OUTPUT_PATH_JAVADOC}" includes="**/*" />
+		</delete>
+		<delete dir="${OUTPUT_PATH_JAVADOC}/ch" />
+	</target>
+
+	<target name="docs" depends=" javadoc" description="javadoc" />
+
+	<!-- generate complete javadoc -->
+	<target name="javadoc">
+		<mkdir dir="${OUTPUT_PATH_JAVADOC}"/>
+		<javadoc packagenames="ch.thomasmueller.*"
+		         sourcepathref="javadoc_srcpath"
+		         defaultexcludes="yes"
+		         private="true"
+		         destdir="${OUTPUT_PATH_JAVADOC}"
+		         author="true"
+		         version="true"
+		         use="true"
+		         windowtitle="saltyFiles"
+		         classpathref="full_classpath"
+		         failonerror="true" />
+	</target>
+	<!-- generate jar file -->
+	<target name="jar" description="Create the binaries">
+	
+		<property name="cp" 
+			value="./lib/ant.jar ./lib/forms-1.0.4.jar ./lib/log4j-1.2.8.jar ./lib/looks-1.2.1.jar"/>
+				
+		<jar destfile="saltyfiles.jar">
+			<manifest>
+				<attribute name="Main-Class" value="ch.thomasmueller.saltyfiles.SaltyFiles"/>
+				<attribute name="Class-Path" value="${cp}"/>									
+			</manifest>
+			
+			<fileset dir="classes">
+				<include name="**/*"/>
+				<exclude name="**/*Test.class"/>
+				<exclude name="**/AllTests*.class"/>
+			</fileset>
+			<fileset dir="src">
+				<include name="**/*.png"/>
+			</fileset>
+		</jar>
+		
+	</target>
+	
+	
+	<!-- create new release of tagged version -->
+	<target name="release" if="tag.name"
+		description="Pack a release (use -Dtag.name=... option">			
+		
+		<mkdir dir="${tag.name}"/>
+		
+		<cvs command="export -r ${tag.name} saltyFiles" dest="${tag.name}"/>
+		
+		<ant antfile="${tag.name}/saltyFiles/build.xml" target="all" inheritall="false"
+			inheritrefs="false"/>
+		
+		<zip destfile="saltyFiles-${tag.name}.zip">
+			<fileset dir="${tag.name}">
+				<include name="**/*"/>
+				<include name="**/.*"/>
+			</fileset>
+		</zip>			
+		
+		<delete dir="${tag.name}"/>
+	</target>
+		
+</project>
+
+
+
+
+
+
+
+
+
+
+

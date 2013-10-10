@@ -1,0 +1,19 @@
+    0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseEncryptionSourceFilesCommand
+    0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseEncryptionTargetDirCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseDecryptionTargetDirCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseDecryptionSourceArchiveCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.SwitchEncryptModesCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.SwitchDecryptModesCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.TransformCommand
+    3 DEBUG [main] ui.Controller - registered data component
+    3 DEBUG [main] ui.Controller - registered data component
+    3 DEBUG [main] ui.Controller - registered data component
+    3 DEBUG [main] ui.Controller - registered data component
+    3 DEBUG [main] ui.Controller - registered data component
+    3 DEBUG [main] ui.Controller - registered data component
+    3 DEBUG [main] ui.Controller - registered data component
+   12 DEBUG [main] ui.MainFrame - start
+   27 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ShowConfigCommand
+   29 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ExitCommand
+   30 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ShowAboutCommand
+   31 DEBUG [main] ui.MainFrame - image url = 'file:/C:/Users/Nick/workspace/Security/saltyFiles/classes/images/fsLogo64.png'
