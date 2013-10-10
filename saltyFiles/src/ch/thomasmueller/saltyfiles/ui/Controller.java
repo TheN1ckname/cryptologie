@@ -100,15 +100,15 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 		// key dataField, value set of components
 		//component.addPropertyChangeListener(this);
 	    if(component instanceof JComboBox) {
-	//		((JComboBox)component).addActionListener(this);
-		//	((JComboBox)component).addFocusListener(this);
-		
+			((JComboBox)component).addActionListener(this);
+			((JComboBox)component).addFocusListener(this);
 	    } else {
 			((JTextField)component).addActionListener(this);
 			((JTextField)component).addFocusListener(this);
 			((JTextField)component).getDocument().addDocumentListener(this);
 	    }
-		Set dataComponentSet = null;
+
+	    Set dataComponentSet = null;
 
 		if (dataMap.containsKey(dataField))
 		{
@@ -148,7 +148,6 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 	 */
 	void registerCommandComponent(String commandClassName, AbstractButton button)
 	{
-
 		button.addActionListener(this);
 		button.setActionCommand(commandClassName);
 		commandMap.put(commandClassName, button);
@@ -213,6 +212,9 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 					{
 						((JTextField) component).setText("");
 					}
+				} 
+				else if(component instanceof JComboBox){
+					System.out.println("ben er nu dus toch wel!?"); // TODO??
 				}
 
 				// add other component handling here fi needed ...
@@ -258,6 +260,9 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 		}
 		else if (event.getSource() instanceof JTextField)
 		{
+			dataChanged((JComponent)event.getSource());
+		}
+		else if(event.getSource() instanceof JComboBox){
 			dataChanged((JComponent)event.getSource());
 		}
 		else
@@ -312,6 +317,9 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 			{
 				log.error("datafield is NULL");
 			}
+		}
+		else if (component != null && component instanceof JComboBox){
+			System.out.println("heuj!!???");
 		}
 		// add other component handling here fi needed ...
 		else
