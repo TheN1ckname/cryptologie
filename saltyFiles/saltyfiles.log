@@ -1,186 +1,23 @@
     0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseEncryptionSourceFilesCommand
-    0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseEncryptionTargetDirCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseEncryptionTargetDirCommand
     1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseDecryptionTargetDirCommand
     1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseDecryptionSourceArchiveCommand
     1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.SwitchEncryptModesCommand
     1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.SwitchDecryptModesCommand
     1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.TransformCommand
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-   11 DEBUG [main] ui.MainFrame - start
+    4 DEBUG [main] ui.Controller - registered data component
+    4 DEBUG [main] ui.Controller - registered data component
+    4 DEBUG [main] ui.Controller - registered data component
+    4 DEBUG [main] ui.Controller - registered data component
+    4 DEBUG [main] ui.Controller - registered data component
+    4 DEBUG [main] ui.Controller - registered data component
+    4 DEBUG [main] ui.Controller - registered data component
+    4 DEBUG [main] ui.Controller - registered data component
+   14 DEBUG [main] ui.MainFrame - start
    28 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ShowConfigCommand
    29 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ExitCommand
    30 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ShowAboutCommand
    30 DEBUG [main] ui.MainFrame - image url = 'file:/C:/Users/Nick/workspace/cryptologie/saltyFiles/classes/images/fsLogo64.png'
- 1627 DEBUG [AWT-EventQueue-0] ui.Controller - ActionEvent: javax.swing.JButton[,413,103,44x22,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@bec04ab,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=1,left=14,bottom=1,right=14],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=false,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=...,defaultCapable=true]
- 3870 DEBUG [AWT-EventQueue-0] ui.FileChooser - Opening: C:\Users\Nick\Documents\TwoFish.txt
- 3870 DEBUG [AWT-EventQueue-0] command.ChooseEncryptionSourceFilesCommand - id: encryptBoolean, true
-id: pwd, 'NULL'
-id: pwdRepeat, 'NULL'
-id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt
-id: encryptTargetDir, NULL
-id: encryptTargetArchive, TwoFish.txt.sly
-id: decryptSourceArchive, NULL
-id: decryptTargetDir, NULL
-id: chooseAlgorithm, NULL
-
- 3870 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwdRepeat, 'NULL' to registered components
- 3870 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwd, 'NULL' to registered components
- 3871 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptTargetDir, NULL to registered components
- 3871 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetDir, NULL to registered components
- 3871 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt to registered components
- 3871 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 3872 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptSourceArchive, NULL to registered components
- 3872 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: chooseAlgorithm, NULL to registered components
- 3872 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetArchive, TwoFish.txt.sly to registered components
- 3873 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 3873 DEBUG [AWT-EventQueue-0] ui.Controller - id: encryptBoolean, true
-id: pwd, 'NULL'
-id: pwdRepeat, 'NULL'
-id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt
-id: encryptTargetDir, NULL
-id: encryptTargetArchive, TwoFish.txt.sly
-id: decryptSourceArchive, NULL
-id: decryptTargetDir, NULL
-id: chooseAlgorithm, Default
-
- 4660 DEBUG [AWT-EventQueue-0] ui.Controller - focusGained data
- 5256 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 5352 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 5399 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 5874 DEBUG [AWT-EventQueue-0] ui.Controller - focusLost data
- 5874 DEBUG [AWT-EventQueue-0] ui.Controller - dataChange: javax.swing.JPasswordField[,322,32,135x20,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@781d929f,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=148,g=144,b=140],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=2,left=3,bottom=2,right=2],selectedTextColor=javax.swing.plaf.ColorUIResource[r=255,g=255,b=255],selectionColor=javax.swing.plaf.ColorUIResource[r=10,g=36,b=106],columns=10,columnWidth=8,command=,horizontalAlignment=LEADING,echoChar=•]
- 5874 DEBUG [AWT-EventQueue-0] ui.Controller - pwd length = 3
- 5874 DEBUG [AWT-EventQueue-0] ui.Controller - Stored data to :id: pwd, '?'
- 5874 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwdRepeat, 'NULL' to registered components
- 5874 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwd, '?' to registered components
- 5875 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptTargetDir, NULL to registered components
- 5875 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetDir, NULL to registered components
- 5875 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt to registered components
- 5875 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
- 5876 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 5876 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptSourceArchive, NULL to registered components
- 5876 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: chooseAlgorithm, Default to registered components
- 5876 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetArchive, TwoFish.txt.sly to registered components
- 5876 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
- 5876 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 6333 DEBUG [AWT-EventQueue-0] ui.Controller - focusGained data
- 6583 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 6675 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 6747 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 8039 DEBUG [AWT-EventQueue-0] ui.Controller - focusLost data
- 8039 DEBUG [AWT-EventQueue-0] ui.Controller - dataChange: javax.swing.JPasswordField[,322,57,135x20,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@781d929f,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=148,g=144,b=140],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=2,left=3,bottom=2,right=2],selectedTextColor=javax.swing.plaf.ColorUIResource[r=255,g=255,b=255],selectionColor=javax.swing.plaf.ColorUIResource[r=10,g=36,b=106],columns=10,columnWidth=8,command=,horizontalAlignment=LEADING,echoChar=•]
- 8039 DEBUG [AWT-EventQueue-0] ui.Controller - pwd length = 3
- 8039 DEBUG [AWT-EventQueue-0] ui.Controller - Stored data to :id: pwdRepeat, '?'
- 8039 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwdRepeat, '?' to registered components
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwd, '?' to registered components
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptTargetDir, NULL to registered components
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetDir, NULL to registered components
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt to registered components
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptSourceArchive, NULL to registered components
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: chooseAlgorithm, Default to registered components
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetArchive, TwoFish.txt.sly to registered components
- 8040 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
- 8041 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 8044 DEBUG [AWT-EventQueue-0] ui.Controller - focusGained data
- 8747 DEBUG [AWT-EventQueue-0] ui.Controller - focusLost data
- 8747 DEBUG [AWT-EventQueue-0] ui.Controller - dataChange: javax.swing.JTextField[,121,140,287x20,layout=javax.swing.plaf.basic.BasicTextUI$UpdateHandler,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@781d929f,flags=296,maximumSize=,minimumSize=,preferredSize=,caretColor=javax.swing.plaf.ColorUIResource[r=0,g=0,b=0],disabledTextColor=javax.swing.plaf.ColorUIResource[r=148,g=144,b=140],editable=true,margin=javax.swing.plaf.InsetsUIResource[top=2,left=3,bottom=2,right=2],selectedTextColor=javax.swing.plaf.ColorUIResource[r=255,g=255,b=255],selectionColor=javax.swing.plaf.ColorUIResource[r=10,g=36,b=106],columns=0,columnWidth=0,command=,horizontalAlignment=LEADING]
- 8748 DEBUG [AWT-EventQueue-0] ui.Controller - Stored data to :id: encryptTargetDir, 
- 8748 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwdRepeat, '?' to registered components
- 8748 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwd, '?' to registered components
- 8748 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptTargetDir, NULL to registered components
- 8748 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetDir,  to registered components
- 8748 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt to registered components
- 8748 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
- 8749 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 8749 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptSourceArchive, NULL to registered components
- 8749 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: chooseAlgorithm, Default to registered components
- 8749 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetArchive, TwoFish.txt.sly to registered components
- 8749 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
- 8749 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 8836 DEBUG [AWT-EventQueue-0] ui.Controller - ActionEvent: javax.swing.JButton[,413,139,44x22,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@bec04ab,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=1,left=14,bottom=1,right=14],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=false,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=...,defaultCapable=true]
- 9938 DEBUG [AWT-EventQueue-0] ui.FileChooser - Opening: C:\Users\Nick\Documents
- 9938 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwdRepeat, '?' to registered components
- 9938 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwd, '?' to registered components
- 9938 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptTargetDir, NULL to registered components
- 9938 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetDir, C:\Users\Nick\Documents to registered components
- 9938 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 9938 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt to registered components
- 9938 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
- 9939 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 9939 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptSourceArchive, NULL to registered components
- 9939 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: chooseAlgorithm, Default to registered components
- 9939 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetArchive, TwoFish.txt.sly to registered components
- 9939 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
- 9939 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
- 9939 DEBUG [AWT-EventQueue-0] ui.Controller - id: encryptBoolean, true
-id: pwd, '?'
-id: pwdRepeat, '?'
-id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt
-id: encryptTargetDir, C:\Users\Nick\Documents
-id: encryptTargetArchive, TwoFish.txt.sly
-id: decryptSourceArchive, NULL
-id: decryptTargetDir, NULL
-id: chooseAlgorithm, Default
-
-10512 DEBUG [AWT-EventQueue-0] ui.Controller - focusGained data
-11216 DEBUG [AWT-EventQueue-0] ui.Controller - ActionEvent: javax.swing.JComboBox[,121,297,86x20,layout=com.jgoodies.plaf.plastic.PlasticComboBoxUI$PlasticComboBoxLayoutManager,alignmentX=0.0,alignmentY=0.0,border=,flags=328,maximumSize=,minimumSize=,preferredSize=,isEditable=false,lightWeightPopupEnabled=true,maximumRowCount=8,selectedItemReminder=TwoFish]
-11216 DEBUG [AWT-EventQueue-0] ui.Controller - dataChange: javax.swing.JComboBox[,121,297,86x20,layout=com.jgoodies.plaf.plastic.PlasticComboBoxUI$PlasticComboBoxLayoutManager,alignmentX=0.0,alignmentY=0.0,border=,flags=328,maximumSize=,minimumSize=,preferredSize=,isEditable=false,lightWeightPopupEnabled=true,maximumRowCount=8,selectedItemReminder=TwoFish]
-11216 DEBUG [AWT-EventQueue-0] ui.Controller - id: encryptBoolean, true
-id: pwd, '?'
-id: pwdRepeat, '?'
-id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt
-id: encryptTargetDir, C:\Users\Nick\Documents
-id: encryptTargetArchive, TwoFish.txt.sly
-id: decryptSourceArchive, NULL
-id: decryptTargetDir, NULL
-id: chooseAlgorithm, TwoFish
-
-11769 DEBUG [AWT-EventQueue-0] ui.Controller - focusLost data
-11769 DEBUG [AWT-EventQueue-0] ui.Controller - dataChange: javax.swing.JComboBox[,121,297,86x20,layout=com.jgoodies.plaf.plastic.PlasticComboBoxUI$PlasticComboBoxLayoutManager,alignmentX=0.0,alignmentY=0.0,border=,flags=328,maximumSize=,minimumSize=,preferredSize=,isEditable=false,lightWeightPopupEnabled=true,maximumRowCount=8,selectedItemReminder=TwoFish]
-11851 DEBUG [AWT-EventQueue-0] ui.Controller - ActionEvent: javax.swing.JButton[,371,0,75x22,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@bec04ab,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=1,left=4,bottom=1,right=4],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=false,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=Start,defaultCapable=true]
-11851 DEBUG [AWT-EventQueue-0] command.TransformCommand - start transformation ...
-11853 INFO  [Thread-3] command.TransformCommand - starting encryption of data
-11853 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwdRepeat, '?' to registered components
-11854 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwd, '?' to registered components
-11854 DEBUG [Thread-3] command.TransformCommand - source : C:\Users\Nick\Documents\TwoFish.txt
-11854 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptTargetDir, NULL to registered components
-11854 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetDir, C:\Users\Nick\Documents to registered components
-11854 DEBUG [Thread-3] command.TransformCommand - target archive : C:\Users\Nick\Documents\TwoFish.txt.sly
-11854 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
-11854 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
-11855 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt to registered components
-11855 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
-11855 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
-11855 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptSourceArchive, NULL to registered components
-11855 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: chooseAlgorithm, TwoFish to registered components
-11855 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetArchive, TwoFish.txt.sly to registered components
-11855 DEBUG [AWT-EventQueue-0] ui.Controller - removeUpdate data
-11856 DEBUG [AWT-EventQueue-0] ui.Controller - insertUpdate data
-11856 DEBUG [AWT-EventQueue-0] ui.Controller - id: encryptBoolean, true
-id: pwd, '?'
-id: pwdRepeat, '?'
-id: encryptSource, C:\Users\Nick\Documents\TwoFish.txt
-id: encryptTargetDir, C:\Users\Nick\Documents
-id: encryptTargetArchive, TwoFish.txt.sly
-id: decryptSourceArchive, NULL
-id: decryptTargetDir, NULL
-id: chooseAlgorithm, TwoFish
-
-11925 DEBUG [Thread-3] io.ArchiveHandler - dir :C:\Users\Nick\Documents, file :TwoFish.txt
-11948 INFO  [Thread-3] io.ArchiveHandler - in archive written to C:\Users\Nick\Documents\TwoFish.txt.sly.iar
-13025 INFO  [Thread-3] transformer.Transformer - start ...
-13026 INFO  [Thread-3] transformer.Transformer - 0 MB (132 byte)
-13029 INFO  [Thread-3] transformer.Transformer - transformation finished !
-13029 DEBUG [Thread-3] command.TransformCommand - file.length before append:164
-13029 DEBUG [Thread-3] transformer.Salt - [B@49bbeb36
-13031 DEBUG [Thread-3] command.TransformCommand - file.length after append:172
-13032 INFO  [Thread-3] command.TransformCommand - Finished transformation successfully ...
+ 3390 DEBUG [AWT-EventQueue-0] ui.Controller - focusGained data
+11973 DEBUG [AWT-EventQueue-0] ui.Controller - focusLost data
+11974 DEBUG [AWT-EventQueue-0] ui.Controller - dataChange: javax.swing.JComboBox[,121,297,86x20,layout=com.jgoodies.plaf.plastic.PlasticComboBoxUI$PlasticComboBoxLayoutManager,alignmentX=0.0,alignmentY=0.0,border=,flags=328,maximumSize=,minimumSize=,preferredSize=,isEditable=false,lightWeightPopupEnabled=true,maximumRowCount=8,selectedItemReminder=Default]
