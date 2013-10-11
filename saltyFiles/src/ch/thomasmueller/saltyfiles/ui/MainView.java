@@ -30,6 +30,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import ch.thomasmueller.saltyfiles.data.DataFieldImpl;
 import ch.thomasmueller.saltyfiles.data.DataModel;
 import ch.thomasmueller.saltyfiles.ui.command.CommandFactory;
 
@@ -70,7 +71,9 @@ public class MainView
 
 	private JTextField textDecryptTargetDir = new JTextField();
 
-	// action
+    private JComboBox chooseAlgoritm = new JComboBox( new String[] {"Default","TwoFish","Other"});
+
+    // action
 	private JButton buttonChooseEncSF = new JButton("...");
 
 	private JButton buttonChooseEncTD = new JButton("...");
@@ -81,14 +84,6 @@ public class MainView
 
 	private JButton buttonTransform = new JButton("Start");
 
-	private JRadioButton standard = new JRadioButton("Default");
-	
-	private JRadioButton twoFish = new JRadioButton("TwoFish");
-	
-	private JRadioButton other = new JRadioButton("Other");
-
-	JPanel panel = new JPanel();
-    JComboBox chooseAlgoritm = new JComboBox( new String[] {"Default","TwoFish","Other"});
 
 	JPanel buttonBar = ButtonBarFactory
 			.buildRightAlignedBar(new JButton[]{buttonTransform});
@@ -116,8 +111,6 @@ public class MainView
 				CommandFactory.SWITCH_ENCRYPT_MODE, radioEncrypt);
 		controller.registerCommandComponent(
 				CommandFactory.SWITCH_DECRYPT_MODE, radioDecrypt);
-		
-		//TODO make controller do things with radio buttons.
 		
 		controller.registerCommandComponent(
 				CommandFactory.TRANSFORM, buttonTransform);
@@ -147,7 +140,8 @@ public class MainView
 				dataModel.getDataField(DataModel.PWD_REPEAT_STRING),
 				pwdRepeat);	
 		
-		controller.registerDataComponent(DataModel.ALGORITHM_STRING, chooseAlgoritm);
+		controller.registerDataComponent(
+				dataModel.getDataField(DataModel.ALGORITHM_STRING), chooseAlgoritm);
 		
 		// switched to encription mode on startup of the application
 		dataModel.getDataField(DataModel.ENCRYPT_BOOLEAN)
@@ -171,9 +165,11 @@ public class MainView
 	public JPanel init() throws Exception
 	{
 		register();
+		
 		FormLayout layout = layout();		
+		
 		JPanel panel = build(layout);
-
+		
 		return panel;
 	}
 
@@ -188,6 +184,7 @@ public class MainView
 		buttonGroupEncOrDec.add(radioDecrypt);
 		buttonGroupEncOrDec.add(radioEncrypt);
 		buttonGroupEncOrDec.setSelected(radioEncrypt.getModel(), true);
+		
 		PanelBuilder builder = new PanelBuilder(layout);
 		builder.setDefaultDialogBorder();
 
@@ -232,13 +229,14 @@ public class MainView
 		builder.addLabel("Target Directory", cc.xy(1, 19));
 		builder.add(textDecryptTargetDir, cc.xyw(3, 19, 5));
 		builder.add(buttonChooseDecTD, cc.xy(9, 19));
-
-		builder.addSeparator("Transform Data", cc.xyw(1, 21, 9));
-		builder.add(buttonBar, cc.xyw(1, 23, 9));
-		//		 The builder holds the layout container that we now return.
 		
 		builder.addLabel("Algorithm",cc.xy(1,23));
 		builder.add(chooseAlgoritm, cc.xy(3,23));
+		
+		builder.addSeparator("Transform Data", cc.xyw(1, 21, 9));
+		builder.add(buttonBar, cc.xyw(1, 23, 9));
+		// The builder holds the layout container that we now return.
+		
 		JPanel panel = builder.getPanel();
 		
 		return panel;

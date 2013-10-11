@@ -330,6 +330,7 @@ public class TransformCommand implements Command
 	 */
 	
 	private String getAlgorithm(DataModel dataModel) {
+		System.out.println("ik verander!!");
 		DataField algorithm = dataModel.getDataField(DataModel.ALGORITHM_STRING);
 		if(algorithm == null) {
 			System.out.println("opgetieft");
@@ -348,7 +349,7 @@ public class TransformCommand implements Command
 		} else
 		{
 			
-			String msg = "shit is broken";
+			String msg = "shit isss broken";
 			System.out.println(msg);
 			log.error(msg);
 			

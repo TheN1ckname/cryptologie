@@ -1,31 +1,27 @@
     0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseEncryptionSourceFilesCommand
     0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseEncryptionTargetDirCommand
-    0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseDecryptionTargetDirCommand
-    0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseDecryptionSourceArchiveCommand
-    0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.SwitchEncryptModesCommand
-    0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.SwitchDecryptModesCommand
-    0 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.TransformCommand
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-    3 DEBUG [main] ui.Controller - registered data component
-   13 DEBUG [main] ui.MainFrame - start
-   28 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ShowConfigCommand
-   29 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ExitCommand
-   29 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ShowAboutCommand
-   30 DEBUG [main] ui.MainFrame - image url = 'file:/C:/Users/Nick/workspace/cryptologie/saltyFiles/classes/images/fsLogo64.png'
- 2848 DEBUG [AWT-EventQueue-0] ui.Controller - ActionEvent: javax.swing.JButton[,321,0,75x22,alignmentX=0.0,alignmentY=0.5,border=javax.swing.plaf.BorderUIResource$CompoundBorderUIResource@7b2661bf,flags=296,maximumSize=,minimumSize=,preferredSize=,defaultIcon=,disabledIcon=,disabledSelectedIcon=,margin=javax.swing.plaf.InsetsUIResource[top=1,left=4,bottom=1,right=4],paintBorder=true,paintFocus=true,pressedIcon=,rolloverEnabled=false,rolloverIcon=,rolloverSelectedIcon=,selectedIcon=,text=Start,defaultCapable=true]
- 2848 DEBUG [AWT-EventQueue-0] command.TransformCommand - start transformation ...
- 2849 ERROR [AWT-EventQueue-0] command.TransformCommand - shit is broken
- 2852 ERROR [AWT-EventQueue-0] command.TransformCommand - pwd or pwdRepeat are not entered
- 2852 ERROR [AWT-EventQueue-0] command.TransformCommand - invalid password !!!
- 4890 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwdRepeat, 'NULL' to registered components
- 4890 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: pwd, 'NULL' to registered components
- 4890 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptTargetDir, NULL to registered components
- 4890 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptTargetDir, NULL to registered components
- 4890 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: encryptSource, NULL to registered components
- 4890 DEBUG [AWT-EventQueue-0] ui.Controller - assinging Data of DataField : id: decryptSourceArchive, NULL to registered components
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseDecryptionTargetDirCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ChooseDecryptionSourceArchiveCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.SwitchEncryptModesCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.SwitchDecryptModesCommand
+    1 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.TransformCommand
+    6 DEBUG [main] ui.Controller - registered data component
+    6 DEBUG [main] ui.Controller - registered data component
+    6 DEBUG [main] ui.Controller - registered data component
+    7 DEBUG [main] ui.Controller - registered data component
+    7 DEBUG [main] ui.Controller - registered data component
+    7 DEBUG [main] ui.Controller - registered data component
+    7 DEBUG [main] ui.Controller - registered data component
+    7 DEBUG [main] ui.Controller - registered data component
+   25 DEBUG [main] ui.MainFrame - start
+   56 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ShowConfigCommand
+   58 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ExitCommand
+   60 DEBUG [main] ui.Controller - registered component for command : ch.thomasmueller.saltyfiles.ui.command.ShowAboutCommand
+   61 DEBUG [main] ui.MainFrame - image url = 'file:/C:/Users/Remy/git/cryptologie/saltyFiles/classes/images/fsLogo64.png'
+ 7274 DEBUG [AWT-EventQueue-0] ui.Controller - focusGained data
+12937 DEBUG [AWT-EventQueue-0] ui.Controller - focusLost data
+12940 DEBUG [AWT-EventQueue-0] ui.Controller - dataChange: javax.swing.JComboBox[,121,297,61x20,layout=com.jgoodies.plaf.plastic.PlasticComboBoxUI$PlasticComboBoxLayoutManager,alignmentX=0.0,alignmentY=0.0,border=,flags=328,maximumSize=,minimumSize=,preferredSize=,isEditable=false,lightWeightPopupEnabled=true,maximumRowCount=8,selectedItemReminder=Default]
+19926 DEBUG [AWT-EventQueue-0] ui.Controller - focusGained data
+23296 DEBUG [AWT-EventQueue-0] ui.Controller - focusLost data
+23297 DEBUG [AWT-EventQueue-0] ui.Controller - dataChange: javax.swing.JComboBox[,121,297,61x20,layout=com.jgoodies.plaf.plastic.PlasticComboBoxUI$PlasticComboBoxLayoutManager,alignmentX=0.0,alignmentY=0.0,border=,flags=328,maximumSize=,minimumSize=,preferredSize=,isEditable=false,lightWeightPopupEnabled=true,maximumRowCount=8,selectedItemReminder=Default]
+48459 DEBUG [AWT-EventQueue-0] ui.Controller - focusGained data
