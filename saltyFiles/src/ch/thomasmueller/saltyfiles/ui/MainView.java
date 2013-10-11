@@ -143,6 +143,9 @@ public class MainView
 		controller.registerDataComponent(
 				dataModel.getDataField(DataModel.ALGORITHM_STRING), chooseAlgoritm);
 		
+		
+		//dataModel.getDataField(DataModel.ALGORITHM_STRING).setValue(chooseAlgoritm.getSelectedItem());	
+		
 		// switched to encription mode on startup of the application
 		dataModel.getDataField(DataModel.ENCRYPT_BOOLEAN)
 			.setValue(Boolean.TRUE);

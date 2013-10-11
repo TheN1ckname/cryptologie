@@ -214,7 +214,9 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 					}
 				} 
 				else if(component instanceof JComboBox){
-					System.out.println("ben er nu dus toch wel!?"); // TODO??
+					//final DataModel dataModel = DataModel.getInstance();
+					//dataModel.getDataField(id)
+					dataField.setValue(((JComboBox) component).getSelectedItem().toString());
 				}
 
 				// add other component handling here fi needed ...
@@ -319,7 +321,8 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 			}
 		}
 		else if (component != null && component instanceof JComboBox){
-			System.out.println("heuj!!???");
+			//System.out.println("heuj!!???");
+			dataField.setValue( ((JComboBox) component).getSelectedItem());
 		}
 		// add other component handling here fi needed ...
 		else

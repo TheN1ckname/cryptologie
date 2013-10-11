@@ -91,7 +91,6 @@ public class TransformCommand implements Command
 
 		final DataModel dataModel = DataModel.getInstance();
 		// check password
-		String getAlgorithm = getAlgorithm(dataModel);
 		boolean pwdOK = checkPassword(dataModel);
 
 		// check all data entered to start transformation
@@ -118,12 +117,14 @@ public class TransformCommand implements Command
 							// Encrypt							
 							if (useEncryptionMode)
 							{
-
+								String getAlgorithm = getAlgorithm(dataModel);	
 								encryptData(dataModel);
 							}
 							// Decrypt
 							else
 							{
+
+								String getAlgorithm = getAlgorithm(dataModel);
 								decryptData(dataModel);
 							}
 							String msg = "Finished transformation successfully ...";
@@ -330,26 +331,27 @@ public class TransformCommand implements Command
 	 */
 	
 	private String getAlgorithm(DataModel dataModel) {
-		System.out.println("ik verander!!");
+		
 		DataField algorithm = dataModel.getDataField(DataModel.ALGORITHM_STRING);
 		if(algorithm == null) {
-			System.out.println("opgetieft");
-			return "fuck" ;
+			log.error("Algorithm is null.");
+			return 	"NONE" ;
 		}
-		
 		String algorithmName = "NONE";
 		if (algorithm.getValue() != null)
 		{
-			if (algorithm.getValue() instanceof char[])
+			if (algorithm.getValue() instanceof String)
 			{
-				char[] pwdChars = (char[]) algorithm.getValue();
-				System.out.println(pwdChars);
-				algorithmName = pwdChars.toString();
+				String value = (String) algorithm.getValue();
+				System.out.println("TEST"+value);
+				algorithmName = value.toString();
+			} else {
+				String msg = "Value is not a String";
+				log.error(msg);
 			}
 		} else
 		{
-			
-			String msg = "shit isss broken";
+			String msg = "value == null";
 			System.out.println(msg);
 			log.error(msg);
 			
