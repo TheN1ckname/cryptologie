@@ -213,9 +213,8 @@ public class Controller implements ActionListener, DocumentListener, FocusListen
 						((JTextField) component).setText("");
 					}
 				} 
+				//toegevoegd om de waardes te setten met het gekozen item
 				else if(component instanceof JComboBox){
-					//final DataModel dataModel = DataModel.getInstance();
-					//dataModel.getDataField(id)
 					dataField.setValue(((JComboBox) component).getSelectedItem().toString());
 				}
 

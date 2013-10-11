@@ -23,6 +23,7 @@ package ch.thomasmueller.saltyfiles.transformer;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.security.Security;
 
 import javax.crypto.Cipher;
 import javax.crypto.CipherOutputStream;
@@ -35,6 +36,7 @@ import javax.swing.ProgressMonitorInputStream;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import ch.thomasmueller.saltyfiles.io.InputFileHandler;
 import ch.thomasmueller.saltyfiles.io.OutputFileHandler;
@@ -76,16 +78,53 @@ public class Transformer
 
 		password = aPassoword;
 		salt = someSalt;
+		Security.addProvider(new BouncyCastleProvider());
+
 	}
-
-	private Cipher initCipher(int mode) throws Exception
-	{
-
+	/**
+	 * 
+	 * @param mode
+	 * @param type used for other algorithms like twofish
+	 * @return
+	 * @throws Exception
+	 */
+	private Cipher initCipher(int mode, String type) throws Exception
+	{	
+		Cipher cipher = null;
+		SecretKeyFactory keyFactory = null;
+		SecretKey key = null;
+		PBEParameterSpec paramSpec = null;
+		
 		PBEKeySpec keySpec = new PBEKeySpec(password);
-		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(algorithm);
-		SecretKey key = keyFactory.generateSecret(keySpec);
-		PBEParameterSpec paramSpec = new PBEParameterSpec(salt, iterationCount);
-		Cipher cipher = Cipher.getInstance(algorithm);
+		System.out.println("Type = " + type);
+		
+		/**
+		 * Switch statement is used to get a correct Cipher by the chosen algorithm
+		 */
+		switch(type) {
+		case "TwoFish" :
+			algorithm = "PBEWithSHAAndTwofish-CBC";
+			keyFactory = SecretKeyFactory.getInstance(algorithm, "BC");
+			key = keyFactory.generateSecret(keySpec);
+			paramSpec = new PBEParameterSpec(salt, iterationCount);
+			cipher = Cipher.getInstance(algorithm, "BC");
+			break;
+		case "Sha1WithDes" :
+			algorithm = "PBEWithSHA1AndDES";
+			keyFactory = SecretKeyFactory.getInstance(algorithm, "BC");
+			key = keyFactory.generateSecret(keySpec);
+			paramSpec = new PBEParameterSpec(salt, iterationCount);
+			cipher = Cipher.getInstance(algorithm, "BC");
+			break;
+		default :
+			algorithm = "PBEWithMD5AndDES";
+			keyFactory = SecretKeyFactory.getInstance(algorithm);
+			key = keyFactory.generateSecret(keySpec);
+			paramSpec = new PBEParameterSpec(salt, iterationCount);
+			cipher = Cipher.getInstance(algorithm);			
+			break;
+		}
+		
 		cipher.init(mode, key, paramSpec);
 		return cipher;
 	}
@@ -104,7 +143,7 @@ public class Transformer
 	 * @throws Exception
 	 */
 	public void transform(int aMode, InputFileHandler source,
-			OutputFileHandler target) throws Exception
+			OutputFileHandler target, String type) throws Exception
 	{
 
 		final int mode = aMode;
@@ -116,7 +155,7 @@ public class Transformer
 
 		// avoid to transform the zip-file signature
 
-		Cipher cipher = initCipher(mode);
+		Cipher cipher = initCipher(mode, type);
 		final CipherOutputStream cos = new CipherOutputStream(fos, cipher);
 
 		byte[] bytes = new byte[1];

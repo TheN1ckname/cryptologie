@@ -71,7 +71,9 @@ public class MainView
 
 	private JTextField textDecryptTargetDir = new JTextField();
 
-    private JComboBox chooseAlgoritm = new JComboBox( new String[] {"Default","TwoFish","Other"});
+	
+	//chooseAlgoritm combobox to choose your algorithm : )
+    private JComboBox chooseAlgorithm = new JComboBox( new String[] {"Default","TwoFish","Sha1WithDes"});
 
     // action
 	private JButton buttonChooseEncSF = new JButton("...");
@@ -141,7 +143,7 @@ public class MainView
 				pwdRepeat);	
 		
 		controller.registerDataComponent(
-				dataModel.getDataField(DataModel.ALGORITHM_STRING), chooseAlgoritm);
+				dataModel.getDataField(DataModel.ALGORITHM_STRING), chooseAlgorithm);
 		
 		
 		//dataModel.getDataField(DataModel.ALGORITHM_STRING).setValue(chooseAlgoritm.getSelectedItem());	
@@ -234,7 +236,7 @@ public class MainView
 		builder.add(buttonChooseDecTD, cc.xy(9, 19));
 		
 		builder.addLabel("Algorithm",cc.xy(1,23));
-		builder.add(chooseAlgoritm, cc.xy(3,23));
+		builder.add(chooseAlgorithm, cc.xy(3,23));
 		
 		builder.addSeparator("Transform Data", cc.xyw(1, 21, 9));
 		builder.add(buttonBar, cc.xyw(1, 23, 9));

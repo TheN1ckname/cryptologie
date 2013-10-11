@@ -38,7 +38,6 @@ import ch.thomasmueller.saltyfiles.io.InputFileHandler;
 import ch.thomasmueller.saltyfiles.io.OutputFileHandler;
 import ch.thomasmueller.saltyfiles.transformer.Salt;
 import ch.thomasmueller.saltyfiles.transformer.Transformer;
-import ch.thomasmueller.saltyfiles.transformer.TwoFish;
 import ch.thomasmueller.saltyfiles.ui.ArchivProgressDialog;
 import ch.thomasmueller.saltyfiles.ui.MessageDialog;
 import ch.thomasmueller.saltyfiles.ui.TaskProgress;
@@ -215,11 +214,9 @@ public class TransformCommand implements Command
 					.toString());
 			OutputFileHandler ofh = new OutputFileHandler(targetArchiveFile
 					.toString());
-			TwoFish tw = new TwoFish(validatedPwd, salt);
-			tw.transform(Cipher.DECRYPT_MODE, ifh, ofh, "temp");
 		
-//			Transformer transformer = new Transformer(validatedPwd, salt);
-//			transformer.transform(Cipher.DECRYPT_MODE, ifh, ofh);
+			Transformer transformer = new Transformer(validatedPwd, salt);
+			transformer.transform(Cipher.DECRYPT_MODE, ifh, ofh, getAlgorithm(dataModel));
 			
 			TaskProgress taskProgress = new TaskProgress();
 			taskProgress.setMessage("Please wait ...");
@@ -307,10 +304,8 @@ public class TransformCommand implements Command
 			OutputFileHandler ofh = new OutputFileHandler(archiveFile
 					.toString());
 			byte[] salt =  Salt.createRandom();
-			TwoFish tw = new TwoFish(validatedPwd, salt);
-			tw.transform(Cipher.ENCRYPT_MODE, ifh, ofh, "temp");
-			//Transformer transformer = new Transformer(validatedPwd, salt);
-		//	transformer.transform(Cipher.ENCRYPT_MODE, ifh, ofh);
+			Transformer transformer = new Transformer(validatedPwd, salt);
+			transformer.transform(Cipher.ENCRYPT_MODE, ifh, ofh,getAlgorithm(dataModel));
 			
 			// Store it in the file because its needed for decryption 
 			if (log.isDebugEnabled())
@@ -347,7 +342,6 @@ public class TransformCommand implements Command
 			if (algorithm.getValue() instanceof String)
 			{
 				String value = (String) algorithm.getValue();
-				System.out.println("TEST"+value);
 				algorithmName = value.toString();
 			} else {
 				String msg = "Value is not a String";
