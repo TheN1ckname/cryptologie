@@ -1,6 +1,13 @@
-ERROR - pwd or pwdRepeat are not entered
-ERROR - invalid password !!!
 INFO  - starting encryption of data
+INFO  - in archive written to C:\Users\Nick\Documents\123.txt.sly.iar
+INFO  - start ...
+INFO  - 0 MB (68 byte)
+INFO  - 0 MB (100 byte)
+INFO  - 0 MB (116 byte)
+INFO  - 0 MB (120 byte)
+INFO  - transformation finished !
 INFO  - Finished transformation successfully ...
-INFO  - starting encryption of data
-INFO  - Finished transformation successfully ...
+INFO  - starting decryption of data
+INFO  - start ...
+INFO  - transformation finished !
+FATAL - Error while expanding C:\Users\Nick\Documents\123.txt.sly.oar

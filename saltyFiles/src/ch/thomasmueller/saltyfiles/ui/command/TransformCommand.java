@@ -38,6 +38,7 @@ import ch.thomasmueller.saltyfiles.io.InputFileHandler;
 import ch.thomasmueller.saltyfiles.io.OutputFileHandler;
 import ch.thomasmueller.saltyfiles.transformer.Salt;
 import ch.thomasmueller.saltyfiles.transformer.Transformer;
+import ch.thomasmueller.saltyfiles.transformer.TwoFish;
 import ch.thomasmueller.saltyfiles.ui.ArchivProgressDialog;
 import ch.thomasmueller.saltyfiles.ui.MessageDialog;
 import ch.thomasmueller.saltyfiles.ui.TaskProgress;
@@ -214,9 +215,11 @@ public class TransformCommand implements Command
 					.toString());
 			OutputFileHandler ofh = new OutputFileHandler(targetArchiveFile
 					.toString());
-
-			Transformer transformer = new Transformer(validatedPwd, salt);
-			transformer.transform(Cipher.DECRYPT_MODE, ifh, ofh);
+			TwoFish tw = new TwoFish(validatedPwd, salt);
+			tw.transform(Cipher.DECRYPT_MODE, ifh, ofh, "temp");
+		
+//			Transformer transformer = new Transformer(validatedPwd, salt);
+//			transformer.transform(Cipher.DECRYPT_MODE, ifh, ofh);
 			
 			TaskProgress taskProgress = new TaskProgress();
 			taskProgress.setMessage("Please wait ...");
@@ -304,9 +307,10 @@ public class TransformCommand implements Command
 			OutputFileHandler ofh = new OutputFileHandler(archiveFile
 					.toString());
 			byte[] salt =  Salt.createRandom();
-			
-			Transformer transformer = new Transformer(validatedPwd, salt);
-			transformer.transform(Cipher.ENCRYPT_MODE, ifh, ofh);
+			TwoFish tw = new TwoFish(validatedPwd, salt);
+			tw.transform(Cipher.ENCRYPT_MODE, ifh, ofh, "temp");
+			//Transformer transformer = new Transformer(validatedPwd, salt);
+		//	transformer.transform(Cipher.ENCRYPT_MODE, ifh, ofh);
 			
 			// Store it in the file because its needed for decryption 
 			if (log.isDebugEnabled())
